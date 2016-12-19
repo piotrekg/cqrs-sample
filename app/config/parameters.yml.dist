@@ -1,0 +1,29 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_read_host: 127.0.0.1
+    database_read_port: null
+    database_read_name: symfony
+    database_read_user: root
+    database_read_password: null
+
+    database_write_host: 127.0.0.1
+    database_write_port: null
+    database_write_name: symfony
+    database_write_user: root
+    database_write_password: null
+    
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    mailer_send_from: "fake@example.com"
+    mailer_send_to: "fake@example.com"
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt

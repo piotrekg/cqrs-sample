@@ -1,0 +1,8 @@
+admin:
+  save: 'Save'
+  product.create.title: 'Add product'
+product:
+  created: 'Product created'
+  name: 'Name'
+  description: 'Description'
+  price: 'Price'

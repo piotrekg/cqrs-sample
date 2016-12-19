@@ -1,0 +1,25 @@
+services:
+  product.repository:
+    class: Sample\Domain\Product\ProductRepository
+    arguments:
+      - '@doctrine.dbal.read_connection'
+
+  Sample.product_admin_controller:
+    class: Sample\ProductBundle\Controller\ProductAdminController
+    arguments:
+      - '@tactician.commandbus'
+
+  product.create_handler:
+    class: Sample\Domain\Product\Command\Handler\CreateHandler
+    arguments:
+      - '@doctrine.dbal.write_connection'
+    tags:
+      - { name: tactician.handler, command: Sample\Domain\Product\Command\CreateCommand }
+
+  product.created_listener:
+    class: Sample\ProductBundle\EventListener\ProductCreatedListener
+    arguments:
+      - "@Sample.mailer"
+      - "@translator"
+    tags:
+      - { name: kernel.event_listener, event: product.created, method: onProductCreated }

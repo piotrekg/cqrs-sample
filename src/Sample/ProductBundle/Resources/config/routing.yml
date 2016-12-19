@@ -1,0 +1,7 @@
+product_list:
+    path:     /
+    defaults: { _controller: ProductBundle:Product:list }
+
+product_admin_create:
+    path:     /admin/new-product
+    defaults: { _controller: ProductBundle:ProductAdmin:create }

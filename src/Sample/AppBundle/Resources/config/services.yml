@@ -1,0 +1,13 @@
+services:
+  Sample.mailer.swift_provider:
+    class: Sample\AppBundle\Mailer\Provider\SwiftMailerProvider
+    arguments:
+      - "@mailer"
+
+  Sample.mailer:
+    class: Sample\AppBundle\Mailer\Mailer
+    arguments:
+      - "%mailer_send_from%"
+      - "%mailer_send_to%"
+      - "@Sample.mailer.swift_provider"
+      - "@event_dispatcher"

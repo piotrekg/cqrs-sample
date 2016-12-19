@@ -1,0 +1,3 @@
+product:
+  description.min_length: 'Description must be at least {{ limit }} characters long'
+  price: 'This is not valid currency value'

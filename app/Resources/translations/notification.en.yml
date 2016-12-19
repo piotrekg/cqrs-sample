@@ -1,0 +1,4 @@
+product:
+  created:
+    subject: "Product created"
+    content: "Name: %name%\nPrice: %price%\nDescription: %description%"
